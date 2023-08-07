@@ -1,0 +1,179 @@
+:root{
+    --mainFont:'Roboto', sans-serif;
+    --secondaryFont: 'Roboto Condensed', sans-serif;
+    --blue: #1B90FC;
+    --white: #FFFFFF;
+    --black: #202020;
+    --gray: #929292;
+}
+
+body{
+    margin: 0;
+    font-family: var(--mainFont);
+}
+
+.wrapper{
+    max-inline-size: 1664px;
+    margin: auto;
+}
+
+p, h1{
+    margin: 0;
+}
+
+.hero h1{
+    font-family: var(--secondaryFont);
+    font-size: 40px;
+    margin-block-end: 8px;
+    color: var(--white);
+}
+
+.hero p{
+    font-family: var(--mainFont);
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--white);
+    margin-block-end: 24px;
+}
+
+img{
+    max-inline-size: 100%;
+}
+
+button{
+    background: var(--blue);
+    color: var(--white);
+    padding-block: 16px;
+    padding-inline: 32px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 16px;
+}
+
+
+.hero-content{
+    display: flex;
+    block-size: 768px;
+    align-items: center;
+}
+
+.card{
+    max-inline-size: 412px;
+    z-index: 2;
+}
+
+.hero::before{
+    content: '';
+    inline-size: 50%;
+    display: block;
+    block-size: 100%;
+    position: absolute;
+    inset-block: 0;
+    background: var(--black);
+    z-index: 1;
+    clip-path: polygon(0 0, calc(100% - 151px) 0, 100% 100%, 0 100%);
+}
+
+.hero{
+    position: relative;
+    background-color: var(--black);
+    background-image: url('../img/loki.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 128px), 0 100%);
+}
+
+.loki{
+    display: none;
+}
+
+@media screen and (max-width: 1444px) {
+    .card{
+        margin-inline-start: 83px;
+    }
+
+    .hero::before{
+        clip-path: polygon(0 0, calc(100% - 113px) 0, 100% 100%, 0 100%);
+    }
+
+}
+
+@media screen and (max-width: 1366px) {
+    .card{
+        max-inline-size: 392px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .wrapper{
+        max-inline-size: 768px;
+    }
+
+    .card{
+        max-inline-size: 640px;
+        margin-block-start: 40px;
+        margin-inline: 64px;
+    }
+
+    .loki{
+        display: block;
+    }
+
+    .hero{
+        background-image: none;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), 0 100%);
+    }
+
+    .hero-content{
+        block-size: 1024px;
+        flex-direction: column;
+    }
+
+    button{
+        width: 100%;
+    }
+
+    .hero::before{
+        content: none;
+    }
+
+    .hero h1{
+       margin-block-start: 24px;
+    }
+}
+
+
+@media screen and (max-width: 375px) {
+
+    .hero{
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), 0 100%);
+    }
+
+    .card{
+        max-inline-size: 312px;
+        margin-block-start: 24px;
+        margin-inline: 24px;
+    }
+
+    .logo{
+        width: 78px;
+    }
+
+    .hero h1{
+        margin-block-start: 24px;
+        font-size: 24px;
+     }
+
+     .hero p{
+        font-size: 14px;
+     }
+
+     .hero-content{
+       block-size: 642px;
+     }
+
+}
